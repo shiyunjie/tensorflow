@@ -700,7 +700,7 @@ class _VariableStore(object):
 
   # Initialize variable when no initializer provided
   def _get_default_initializer(self, name, shape=None, dtype=dtypes.float32):
-    """Provide a default initializer and a corresponding value
+    """Provide a default initializer and a corresponding value.
 
     Args:
       name: see get_variable.
@@ -725,7 +725,8 @@ class _VariableStore(object):
       initializing_from_value = True
     # NOTES:Do we need to support for handling DT_STRING and DT_COMPLEX here?
     else:
-      raise ValueError("An initializer for variable %s is required" % name)
+      raise ValueError("An initializer for variable %s of %s is required"
+          % (name, dtype.base_dtype)
 
     return initializer, initializing_from_value
 
