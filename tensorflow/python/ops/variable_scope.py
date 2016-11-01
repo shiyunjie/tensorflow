@@ -726,7 +726,7 @@ class _VariableStore(object):
     # NOTES:Do we need to support for handling DT_STRING and DT_COMPLEX here?
     else:
       raise ValueError("An initializer for variable %s of %s is required"
-          % (name, dtype.base_dtype)
+          % (name, dtype.base_dtype))
 
     return initializer, initializing_from_value
 
